@@ -83,7 +83,7 @@ urlpatterns = [
 
 
 **Create a diagram explaining the flow of client requests to a Django web app and its response. Also in the diagram, explain the connections between urls.py, views.py, models.py, and the HTML file(s).**
-![djangodiagram](https://github.com/raisaafadilla/assignment2-pbp/assets/134634814/8ec53327-30b8-407d-bb23-1eb53cf45041)
+![djangodiagram](https://github.com/raisaafadilla/assignment2-pbp/assets/134634814/0c5c586d-b443-421c-a76c-c678b0f4a887)
 
 
 **What is the purpose of a virtual environment? Can we create a Django web app without a virtual environment?**
