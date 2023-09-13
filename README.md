@@ -83,10 +83,12 @@ urlpatterns = [
 
 
 **Create a diagram explaining the flow of client requests to a Django web app and its response. Also in the diagram, explain the connections between urls.py, views.py, models.py, and the HTML file(s).**
+
 ![djangodiagram](https://github.com/raisaafadilla/assignment2-pbp/assets/134634814/0c5c586d-b443-421c-a76c-c678b0f4a887)
 
 
 **What is the purpose of a virtual environment? Can we create a Django web app without a virtual environment?**
+
 A virtual environment isolates and manages project-specific dependencies. It is possible to create a Django web app without a virtual environment, however it is not recommended because it may generate dependency problems.
 
 **What is MVC, MVT, and MVVM? Explain the differences between the three.**
