@@ -1,7 +1,46 @@
-<h1>Product List Page</h1>
+{% extends 'base.html' %}
 
-<h5>Name:</h5>
-<p>{{ name }}</p>
+{% block content %}
+    <h1 style="text-align: center;">Raisa's Shopping List Page</h1>
 
-<h5>Class:</h5>
-<p>{{ class }}</p>
+    <h5 style="text-align: center;">Name:</h5>
+    <p style="text-align: center;">{{name}}</p>
+
+    <h5 style="text-align: center;">Class:</h5>
+    <p style="text-align: center;">{{class}}</p>
+
+    <div style="text-align: center;">
+        <table style="margin: 0 auto;">
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Description</th>
+                <th>Date Added</th>
+             </tr>
+    
+            {% comment %} Below is how to show the product data {% endcomment %}
+    
+            {% for product in products %}
+                <tr>
+                    <td>{{product.name}}</td>
+                    <td>{{product.price}}</td>
+                    <td>{{product.description}}</td>
+                    <td>{{product.date_added}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+    
+<br />
+ 
+<div style="text-align: center;">
+    <a href="{% url 'main:create_product' %}" style="display: inline-block;">
+        <button>
+            Add New Product
+        </button>
+    </a>
+</div>
+
+<p style="text-align: center;">You have saved {{item_count}} items in this application.</p>
+    
+{% endblock content %}
