@@ -1,3 +1,5 @@
+**Assignment 2**
+
 **How do you implement the tasks in the checklist? Explain in a step-by-step manner (not just copy-paste from the tutorial).**
 1. Create a new django project.
     - First, I created a new directory named “assignment2_pbp” on my computer files.
@@ -108,5 +110,84 @@ A virtual environment isolates and manages project-specific dependencies. It is 
    - ViewModel: exposes the essential data streams to the View, acting as a bridge between the Model and the View. 
 
 Link : https://assignment2-pbp.adaptable.app
+
+
+**Assignment 3**
+
+**What is the difference between POST form and GET form in Django?**
+The POST method is used by Django's login form, in which the browser packages the form's data, encrypts it for transmission, sends it to the server, and then waits for the server to respond. In contrast, the GET method constructs a URL by assembling a string composed of the submitted data, encompassing both the data keys, values, and the target destination.
+
+**What are the main differences between XML, JSON, and HTML in the context of data delivery?**
+HTML is designed to describe how data is displayed on the web pages. It specifies how text, graphics, and links should be organized and presented on the web for web browser rendering. 
+Both XML and JSON are used to store and transport data, however their approaches to data representation and structuring are different. JSON is frequently chosen because it is straightforward, readable, and appropriate for data exchange in modern web applications, while XML is still useful in some areas where extensibility and hierarchical data structures are essential.
+
+**Why is JSON often used in data exchange between modern web applications?**
+JSON is simple and readable. It uses a human-readable format by using key-values pairs and arrays. Moreover, JSON supports a wide variety of data structures, including arrays, objects, strings, numeric values, and boolean values. This flexibility makes it suitable for illustrating complex data structures.
+
+**Explain how you implemented the checklist above step-by-step.**
+1. Create a form input to add a model object to the previous app.
+    - I added a new file called forms.py to the main folder. The form structure for new item data, including name, price, and description, will be made using this file.
+    - Then, I inserted some imports at the beginning of the views.py file in the main folder. I also created a new function named create_product.
+    - I added create_product as the import and a new url path inside the url patterns list to access the previously imported function in urls.py inside the main folder.
+    - I made a new HTML file called create_product.html in the templates subdirectory of the main folder.
+    - I added the code below to the main.html file to create a table with the product data and a button that directs users to the form page.
+```
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Description</th>
+        <th>Date Added</th>
+    </tr>
+
+    {% comment %} Below is how to show the product data {% endcomment %}
+
+    {% for product in products %}
+        <tr>
+            <td>{{product.name}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.description}}</td>
+            <td>{{product.date_added}}</td>
+        </tr>
+    {% endfor %}
+</table>
+
+<br />
+
+<a href="{% url 'main:create_product' %}">
+    <button>
+        Add New Product
+    </button>
+</a>
+
+{% endblock content %}
+```
+
+2. Add 5 views to view the added objects in HTML, XML, JSON, XML by ID, and JSON by ID formats and create URL routing for each of the views.
+    - I created a new function named show_xml.
+    - I added show_xml as the import and a new url path inside the url patterns list to access the previously imported function in urls.py inside the main folder.
+    - The same thing with XML, returning data as JSON is also done by creating a new function in the views.py file and adding the function as import and a new url path inside the url patterns list.
+    - For retrieving data based on ID in XML and JSON format : In views.py inside the main folder, I added a new function show_xml_by_id and show_json_by_id.
+    - I added a return statement that returns a HttpResponse with the serialized data in either XML or JSON format and sets the content_type parameter to "application/xml" or "application/json".
+    - In the urls.py file, I imported all the functions that I created before and added all the url paths into the urlpatterns list.
+
+**Screenshots of the results in Postman.**
+
+1. HTML
+    <img width="1510" alt="Screenshot 2023-09-20 at 2 31 35 AM" src="https://github.com/raisaafadilla/assignment2-pbp/assets/134634814/c5e54e45-2693-47bd-8d61-3e61221587d0">
+
+3. XML
+   <img width="1510" alt="Screenshot 2023-09-20 at 2 31 22 AM" src="https://github.com/raisaafadilla/assignment2-pbp/assets/134634814/33912930-0ea6-40b4-8ed1-328e95090408">
+
+4. JSON
+    <img width="1510" alt="Screenshot 2023-09-20 at 2 32 18 AM" src="https://github.com/raisaafadilla/assignment2-pbp/assets/134634814/75bb4a94-cca2-4834-bc09-43dfafe7432f">
+
+6. XML by ID
+    <img width="1510" alt="Screenshot 2023-09-20 at 2 33 19 AM" src="https://github.com/raisaafadilla/assignment2-pbp/assets/134634814/a48361d7-e1a5-4fd0-a34c-91ef241595c4">
+
+8. JSON by ID
+   <img width="1510" alt="Screenshot 2023-09-20 at 2 33 51 AM" src="https://github.com/raisaafadilla/assignment2-pbp/assets/134634814/7b11dc12-d09b-4a5c-8bdc-00f5333ab3c6">
+
+
 
 
