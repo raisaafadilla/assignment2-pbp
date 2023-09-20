@@ -174,20 +174,19 @@ JSON is simple and readable. It uses a human-readable format by using key-values
 **Screenshots of the results in Postman.**
 
 1. HTML
-    <img width="1510" alt="Screenshot 2023-09-20 at 2 31 35 AM" src="https://github.com/raisaafadilla/assignment2-pbp/assets/134634814/c5e54e45-2693-47bd-8d61-3e61221587d0">
+   <img width="1512" alt="Screenshot 2023-09-20 at 11 32 09 AM" src="https://github.com/raisaafadilla/assignment2-pbp/assets/134634814/fea9c14e-7ace-469a-9ec5-2fe114019392">
 
 3. XML
-   <img width="1510" alt="Screenshot 2023-09-20 at 2 31 22 AM" src="https://github.com/raisaafadilla/assignment2-pbp/assets/134634814/33912930-0ea6-40b4-8ed1-328e95090408">
+   <img width="1512" alt="Screenshot 2023-09-20 at 11 32 20 AM" src="https://github.com/raisaafadilla/assignment2-pbp/assets/134634814/7ae95c72-e6f6-4cb0-9909-019cb9bbbb5f">
 
 4. JSON
-    <img width="1510" alt="Screenshot 2023-09-20 at 2 32 18 AM" src="https://github.com/raisaafadilla/assignment2-pbp/assets/134634814/75bb4a94-cca2-4834-bc09-43dfafe7432f">
+   <img width="1512" alt="Screenshot 2023-09-20 at 11 32 38 AM" src="https://github.com/raisaafadilla/assignment2-pbp/assets/134634814/3216861f-683a-4000-aa70-fcf08dea72ff">
 
 6. XML by ID
-    <img width="1510" alt="Screenshot 2023-09-20 at 2 33 19 AM" src="https://github.com/raisaafadilla/assignment2-pbp/assets/134634814/a48361d7-e1a5-4fd0-a34c-91ef241595c4">
+   <img width="1512" alt="Screenshot 2023-09-20 at 11 32 52 AM" src="https://github.com/raisaafadilla/assignment2-pbp/assets/134634814/e4693b35-0b1e-40db-9d88-63c523bf57d8">
 
 8. JSON by ID
-   <img width="1510" alt="Screenshot 2023-09-20 at 2 33 51 AM" src="https://github.com/raisaafadilla/assignment2-pbp/assets/134634814/7b11dc12-d09b-4a5c-8bdc-00f5333ab3c6">
-
+   <img width="1512" alt="Screenshot 2023-09-20 at 11 33 02 AM" src="https://github.com/raisaafadilla/assignment2-pbp/assets/134634814/5a76c0b2-19cd-4c49-af5d-f7384daeab1b">
 
 
 
