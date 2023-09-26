@@ -189,4 +189,41 @@ JSON is simple and readable. It uses a human-readable format by using key-values
    <img width="1512" alt="Screenshot 2023-09-20 at 11 33 02 AM" src="https://github.com/raisaafadilla/assignment2-pbp/assets/134634814/5a76c0b2-19cd-4c49-af5d-f7384daeab1b">
 
 
+**Assignment 4**
+
+**What is UserCreationForm in Django? Explain its advantages and disadvantages.**
+
+Django UserCreationForm is used to create a new user who can access a website application. The advantage of using UserCreationForm is that it provides a practical method for creating user registration forms without having to individually describe each field and rule validation. However, UserCreationForm does not cover all the use cases for user registration. If people want to collect additional user data or complicated requirements during the registration, they must design a custom registration form.
+
+**What is the difference between authentication and authorization in Django application? Why are both important?**
+
+Authentication is the process of verifying user identities, while authorization is the process of verifying what specific data a user has access to. Authentication and authorization is important because they are two fundamental information security procedures that are used to protect systems and data. 
+
+**What are cookies in website? How does Django use cookies to manage user session data?**
+
+What’s referred to as a ‘cookie’ in a website is a piece of data collected as you browse to identify specific users and improve your browsing experience later on. To identify each browser and its associated session with the site, a cookie containing a special session id is used by Django. Those actual session datas are stored in the site database by default, which is more secure than cookie-stored data because they are more vulnerable to malicious users. 
+
+**Are cookies secure to use? Is there potential risk to be aware of?**
+
+The safety of cookies relies on how the developer handles them. Developers need to be careful about what information they put in cookies, use security features, and consider user privacy to make sure cookies are safe in their apps. Cookies can also track what users do on different websites, which can cause privacy concerns. Moreover, if cookies store too much data, it could make websites slower and increase the risk of exposing sensitive information.
+
+**Explain how you implemented the checklist above step-by-step (not just following the tutorial).**
+
+1. Implement registration, login, and logout functions to allow users to access the previous application.
+    - Registration :
+      I first imported the necessary modules, including redirect, UserCreationForm, and messages, in the views.py file located within the main directory. Next, I implemented a register function       in the views.py file to automatically generate a registration form. To complement this, I created a corresponding register.html file within the main/templates folder to render the               registration form. To ensure that users can access this registration page, I went into the urls.py file in the main directory, imported the register function, and established a new URL          path for the registration page.
+    - Login :
+      I included the authenticate and login functions in the views.py file to facilitate user authentication and login upon successful authentication. Additionally, I crafted a login_user             function within the same views.py file to handle the login process. For the presentation layer, I created a dedicated HTML file, login.html, inside the main/templates folder to render the       login form and user interface. To ensure user accessibility to the login page, I made corresponding updates in the urls.py file located in the main directory by importing the login_user         function and establishing a new URL path specifically for user login.
+    - Logout
+      I imported the logout module in the views.py file located in the main folder. To handle user logout requests, I implemented the logout_user function within the same views.py file. To            provide users with a convenient means of logging out, I modified the main.html file situated within the main/templates folder to include a visible logout button or link. To ensure that          the logout feature is accessible, I updated the urls.py file inside the main directory by importing the logout_user function and establishing a new URL path dedicated to user logout.
+      
+3. Connect Item model with User.
+   - In model.py file inside the main folder, I imported user and added user variable (user = models.ForeignKey(User, on_delete=models.CASCADE)). Then, in show_main function, I added ('name':        request.user.username) inside the context variable.
+   
+5. Display the information of the logged-in user, such as their username, and applying cookies, such as last login, on the main application page.
+   - In the views.py file located within the main subdirectory of my Django project, I made several important updates. First, I included imports for HttpResponseRedirect, reverse, and datetime       to handle redirection, URL reversing, and date-related functionalities. Within the login_user function, I introduced modifications within the "if user is not None" block to enhance the          login process. Additionally, in the show_main function, I incorporated the statement 'last_login': request.COOKIES['last_login'] to include the 'last_login' cookie data in the response,         thereby enabling it to be displayed on the web page. To improve user logout functionality in the logout_user function, I introduced the line response.delete_cookie('last_login') to              effectively delete the 'last_login' cookie when a user logs out. Finally, to display the 'last login' data to users, I inserted the "Last login session:" code into the main.html file.
+
+
+
+
 
