@@ -224,6 +224,34 @@ The safety of cookies relies on how the developer handles them. Developers need 
    - In the views.py file located within the main subdirectory of my Django project, I made several important updates. First, I included imports for HttpResponseRedirect, reverse, and datetime       to handle redirection, URL reversing, and date-related functionalities. Within the login_user function, I introduced modifications within the "if user is not None" block to enhance the          login process. Additionally, in the show_main function, I incorporated the statement 'last_login': request.COOKIES['last_login'] to include the 'last_login' cookie data in the response,         thereby enabling it to be displayed on the web page. To improve user logout functionality in the logout_user function, I introduced the line response.delete_cookie('last_login') to              effectively delete the 'last_login' cookie when a user logs out. Finally, to display the 'last login' data to users, I inserted the "Last login session:" code into the main.html file.
 
 
+**Assignment 5**
+
+**Explain the purpose of some CSS element selector and when to use it.**
+
+CSS selectors are used to select the specific HTML elements that we want to style on a web page. In class, we learned three types of CSS selectors, which are element selector, ID selector, and class selector. Element selector is for choosing things on the page that have the same HTML tag. ID selector is for picking out something special on a webpage using its unique ID. Class selector is for choosing things that have a particular class attribute.
+
+**Explain some of the HTML5 tags that you know.**
+
+    - <a> is used for making a hyperlink.
+    - <br> is used for making a single line break.
+    - <button> is used for creating a clickable button.
+    - <div> is used for specifying a section in a document.
+    - <hr1> to <hr6> is used to define HTML headings.
+
+**What are the differences between margin and padding?**
+
+Margin and padding are two elements in CSS that create space around elements on a web page. Margin controls the space outside the border of an element, while padding controls the space inside the border of an element. 
+
+**What are the differences between the CSS framework Tailwind and Bootstrap? When should we use Bootstrap rather than Tailwind, and vice versa?**
+
+Tailwind is a newer tool that's still improving, while Bootstrap has been around for a while and is great for saving time when making websites.
+When we use Tailwind to build a website, we have more freedom to make it special and unique because we start from the beginning. But with Bootstrap, our website might look similar to others because it starts with a ready-made design.
+If we want our website to be very different and customized, Tailwind is the way to go because we can make it our own. However, if we need to focus more on the technical backend stuff and want a common website layout, Bootstrap is a better choice because it comes with its own pre-made template.
+
+**Explain how you implemented the checklist above step-by-step (not just following the tutorial).**
+
+I picked Bootstrap as the CSS framework for my assignment. I made changes to the login page, registration, and product creation using Bootstrap's cards. I also improved things like colors, fonts, padding, and more. On the main page, I customized the list table, added a navigation bar, and made adjustments to colors, fonts, padding, buttons, and other details.
+
 
 
 
