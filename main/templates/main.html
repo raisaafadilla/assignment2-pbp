@@ -1,17 +1,53 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1 style="text-align: center;">Raisa's Shopping List Page</h1>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+J4jsl5c9zdLKaUk5Ae5f5b1bw6AUn5f5v8FZJoMxm6f5cH1" crossorigin="anonymous"></script>
 
-<h5 style="text-align: center;">Name:</h5>
+    <style>
+        table {
+        width: 100%;
+        }
+
+        td, th {
+        border-bottom: 1px solid;
+        border-color: #0B1957;
+        text-align: left;
+        padding: 10px;
+        margin-left: 25px;
+        margin-right: 25px;
+        }
+
+    </style>
+</head>
+
+<div style = "background-color:#F8F3EA; height: 100vh;">
+    <nav style="background-color: #F8F3EA; padding: 20px; display: flex; justify-content: space-between; align-items: center;">
+        <div class="container-fluid text-center">
+            <h1 style="color: #0B1957; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ; font-size: 35px; position: center; font-weight: 600;" class="navbar-brand mb-0 h1">Raisa's Inventory</h1>
+        </div>
+        <div>
+            <a href="{% url 'main:logout' %}">
+                <button style="background-color: #0B1957; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ; color: #F8F3EA; border-color: #0B1957;" class="btn btn-primary">
+                    Logout
+                </button>
+            </a>
+        </div>
+    </nav>
+
+<h2 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; margin-left: 25px; color: #0B1957; font-weight: 600;">Welcome Back, {{user}}!</h2>
+
+<!-- <h5 style="text-align: center;">Name:</h5>
 <p style="text-align: center;">{{name}}</p>
 
 <h5 style="text-align: center;">Class:</h5>
-<p style="text-align: center;">{{class}}</p>
+<p style="text-align: center;">{{class}}</p> -->
 
-<div style="text-align: center;">
-    <table style="margin: 0 auto;">
-        <tr>
+<div>
+    <div style="padding: 30px;">
+    <table>
+        <tr style = "font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: 600; color: #0B1957;">
             <th>Name</th>
             <th>Amount</th>
             <th>Description</th>
@@ -23,7 +59,7 @@
         {% comment %} Below is how to show the product data {% endcomment %}
     
         {% for product in products %}
-        <tr>
+        <tr style = "font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color: #0B1957;" >
             <td>{{product.name}}</td>
             <td>{{product.amounts}}</td>
             <td>{{product.description}}</td>
@@ -32,27 +68,33 @@
             <td>{{product.user}}</td>
         </tr>
         {% endfor %}
-    </table>
+    </table style="margin: 25px;">
 </div>
-    
-<br />
+</div>
+
+<div style="padding: 30px;">
+<div style=" display:flex; justify-content: space-between; text-align: center;">
+<p style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color: #0B1957;">You have saved {{item_count}} items in this application.</p>
  
-<div style="text-align: center;">
+<div>
     <a href="{% url 'main:create_product' %}" style="display: inline-block;">
-        <button>
+        <button style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color: #0B1957; border-color: #0B1957; background-color: transparent;" class="btn btn-outline-primary">
             Add New Product
         </button>
     </a>
 </div>
+</div>
 
-<p style="text-align: center;">You have saved {{item_count}} items in this application.</p>
+<br>
+<br>
+<br>
 
-<h5>Last login session: {{ last_login }}</h5>
+<h5 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color: #0B1957; font-size: 10pt;">Last login session: {{ last_login }}</h5>
+</div>
+</div>
+<footer style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color: #F8F3EA; text-align: center; background-color: #0B1957;">
+    &copy; 2023 {{name}} {{class}}.  All rights reserved
+</footer>
 
-<a href="{% url 'main:logout' %}">
-    <button>
-        Logout
-    </button>
-</a>
     
 {% endblock content %}
