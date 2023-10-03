@@ -189,4 +189,69 @@ JSON is simple and readable. It uses a human-readable format by using key-values
    <img width="1512" alt="Screenshot 2023-09-20 at 11 33 02 AM" src="https://github.com/raisaafadilla/assignment2-pbp/assets/134634814/5a76c0b2-19cd-4c49-af5d-f7384daeab1b">
 
 
+**Assignment 4**
+
+**What is UserCreationForm in Django? Explain its advantages and disadvantages.**
+
+Django UserCreationForm is used to create a new user who can access a website application. The advantage of using UserCreationForm is that it provides a practical method for creating user registration forms without having to individually describe each field and rule validation. However, UserCreationForm does not cover all the use cases for user registration. If people want to collect additional user data or complicated requirements during the registration, they must design a custom registration form.
+
+**What is the difference between authentication and authorization in Django application? Why are both important?**
+
+Authentication is the process of verifying user identities, while authorization is the process of verifying what specific data a user has access to. Authentication and authorization is important because they are two fundamental information security procedures that are used to protect systems and data. 
+
+**What are cookies in website? How does Django use cookies to manage user session data?**
+
+What’s referred to as a ‘cookie’ in a website is a piece of data collected as you browse to identify specific users and improve your browsing experience later on. To identify each browser and its associated session with the site, a cookie containing a special session id is used by Django. Those actual session datas are stored in the site database by default, which is more secure than cookie-stored data because they are more vulnerable to malicious users. 
+
+**Are cookies secure to use? Is there potential risk to be aware of?**
+
+The safety of cookies relies on how the developer handles them. Developers need to be careful about what information they put in cookies, use security features, and consider user privacy to make sure cookies are safe in their apps. Cookies can also track what users do on different websites, which can cause privacy concerns. Moreover, if cookies store too much data, it could make websites slower and increase the risk of exposing sensitive information.
+
+**Explain how you implemented the checklist above step-by-step (not just following the tutorial).**
+
+1. Implement registration, login, and logout functions to allow users to access the previous application.
+    - Registration :
+      I first imported the necessary modules, including redirect, UserCreationForm, and messages, in the views.py file located within the main directory. Next, I implemented a register function       in the views.py file to automatically generate a registration form. To complement this, I created a corresponding register.html file within the main/templates folder to render the               registration form. To ensure that users can access this registration page, I went into the urls.py file in the main directory, imported the register function, and established a new URL          path for the registration page.
+    - Login :
+      I included the authenticate and login functions in the views.py file to facilitate user authentication and login upon successful authentication. Additionally, I crafted a login_user             function within the same views.py file to handle the login process. For the presentation layer, I created a dedicated HTML file, login.html, inside the main/templates folder to render the       login form and user interface. To ensure user accessibility to the login page, I made corresponding updates in the urls.py file located in the main directory by importing the login_user         function and establishing a new URL path specifically for user login.
+    - Logout
+      I imported the logout module in the views.py file located in the main folder. To handle user logout requests, I implemented the logout_user function within the same views.py file. To            provide users with a convenient means of logging out, I modified the main.html file situated within the main/templates folder to include a visible logout button or link. To ensure that          the logout feature is accessible, I updated the urls.py file inside the main directory by importing the logout_user function and establishing a new URL path dedicated to user logout.
+      
+3. Connect Item model with User.
+   - In model.py file inside the main folder, I imported user and added user variable (user = models.ForeignKey(User, on_delete=models.CASCADE)). Then, in show_main function, I added ('name':        request.user.username) inside the context variable.
+   
+5. Display the information of the logged-in user, such as their username, and applying cookies, such as last login, on the main application page.
+   - In the views.py file located within the main subdirectory of my Django project, I made several important updates. First, I included imports for HttpResponseRedirect, reverse, and datetime       to handle redirection, URL reversing, and date-related functionalities. Within the login_user function, I introduced modifications within the "if user is not None" block to enhance the          login process. Additionally, in the show_main function, I incorporated the statement 'last_login': request.COOKIES['last_login'] to include the 'last_login' cookie data in the response,         thereby enabling it to be displayed on the web page. To improve user logout functionality in the logout_user function, I introduced the line response.delete_cookie('last_login') to              effectively delete the 'last_login' cookie when a user logs out. Finally, to display the 'last login' data to users, I inserted the "Last login session:" code into the main.html file.
+
+
+**Assignment 5**
+
+**Explain the purpose of some CSS element selector and when to use it.**
+
+CSS selectors are used to select the specific HTML elements that we want to style on a web page. In class, we learned three types of CSS selectors, which are element selector, ID selector, and class selector. Element selector is for choosing things on the page that have the same HTML tag. ID selector is for picking out something special on a webpage using its unique ID. Class selector is for choosing things that have a particular class attribute.
+
+**Explain some of the HTML5 tags that you know.**
+
+    - <a> is used for making a hyperlink.
+    - <br> is used for making a single line break.
+    - <button> is used for creating a clickable button.
+    - <div> is used for specifying a section in a document.
+    - <hr1> to <hr6> is used to define HTML headings.
+
+**What are the differences between margin and padding?**
+
+Margin and padding are two elements in CSS that create space around elements on a web page. Margin controls the space outside the border of an element, while padding controls the space inside the border of an element. 
+
+**What are the differences between the CSS framework Tailwind and Bootstrap? When should we use Bootstrap rather than Tailwind, and vice versa?**
+
+Tailwind is a newer tool that's still improving, while Bootstrap has been around for a while and is great for saving time when making websites.
+When we use Tailwind to build a website, we have more freedom to make it special and unique because we start from the beginning. But with Bootstrap, our website might look similar to others because it starts with a ready-made design.
+If we want our website to be very different and customized, Tailwind is the way to go because we can make it our own. However, if we need to focus more on the technical backend stuff and want a common website layout, Bootstrap is a better choice because it comes with its own pre-made template.
+
+**Explain how you implemented the checklist above step-by-step (not just following the tutorial).**
+
+I picked Bootstrap as the CSS framework for my assignment. I made changes to the login page, registration, and product creation using Bootstrap's cards. I also improved things like colors, fonts, padding, and more. On the main page, I customized the list table, added a navigation bar, and made adjustments to colors, fonts, padding, buttons, and other details.
+
+
+
 
