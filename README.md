@@ -255,18 +255,23 @@ I picked Bootstrap as the CSS framework for my assignment. I made changes to the
 **Assignment 6**
 
 **Explain the difference between asynchronous programming and synchronous programming.**
+
 Asynchronous programming enables many processes to run simultaneously, allowing the program to move on to other tasks while awaiting the outcome of each task. In contrast, synchronous programming handles tasks sequentially, requiring each task to complete before moving on to the next one.
 
 **In the implementation of JavaScript and AJAX, there is an implemented paradigm called the event-driven programming paradigm. Explain what this paradigm means and give one example of its implementation in this assignment.**
+
 In event-driven programming, the program's behavior hinges on events that take place during its execution, as opposed to a predefined sequence of operations. Instead of following a strict linear path, an event-driven program remains receptive to specific events. When these events occur, corresponding event handlers or callbacks are activated to address them.
 
 **Explain the implementation of asynchronous programming in AJAX.**
+
 Asynchronous programming in AJAX is a technique that enables online applications to communicate with web servers without slowing down the website or "freezing" it. With the use of this method, web pages can ask a server for data or information and respond to the server's response without the webpage being unusable while it waits for the response. In spite of background server communication, this makes websites feel responsive and fluid.
 
 **In this semester, the implementation of AJAX is done using the Fetch API rather than the jQuery library. Compare the two technologies and write down your opinion which technology is better to use.**
+
 The Fetch API is a new and modern tool that's already in a web browser. It's like a better and more standard way to ask the internet for things, even for AJAX stuff. Now, jQuery is an old favorite tool people have used for a long time. It's handy because it makes the tough AJAX things easier with its fancy tricks. It can make usual AJAX jobs shorter and simpler to get. I prefer the Fetch API more because it is up-to-date and great for new projects.
 
 ​​**Explain how you implemented the checklist above step-by-step (not just following the tutorial).**
+
 To implement the add product using AJAX, first in views.py, I imported  from django.views.decorators.csrf import csrf_exempt and made a function called get_product_json and add_product_ajax. Then, in urls.py, I imported the get_product_json and add_product_ajax and added both URL paths inside the urlspatterns list. In main.html, I replaced the table code with table id="product_table">/table>. I added a <script> tag block and a new method called getProducts(). In the <script> tag block, I also added a new method called refreshProducts(). The product data will be updated asynchronously using this function. Moreover, I created a new function inside the <script> tag block called addProduct() and set the addProduct() function as the onclick function of the model's  "Add Product" button. Next, I created a form modal by using bootstrap to add the products and also the button to show the modal. Lastly, I adjusted the add product button that uses ajax by replacing it with the previous add products button.
 
 
