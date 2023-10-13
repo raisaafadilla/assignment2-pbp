@@ -1,4 +1,4 @@
-**Assignment 2**
+## Assignment 2
 
 **How do you implement the tasks in the checklist? Explain in a step-by-step manner (not just copy-paste from the tutorial).**
 1. Create a new django project.
@@ -112,7 +112,7 @@ A virtual environment isolates and manages project-specific dependencies. It is 
 Link : https://assignment2-pbp.adaptable.app
 
 
-**Assignment 3**
+## Assignment 3
 
 **What is the difference between POST form and GET form in Django?**
 The POST method is used by Django's login form, in which the browser packages the form's data, encrypts it for transmission, sends it to the server, and then waits for the server to respond. In contrast, the GET method constructs a URL by assembling a string composed of the submitted data, encompassing both the data keys, values, and the target destination.
@@ -189,7 +189,7 @@ JSON is simple and readable. It uses a human-readable format by using key-values
    <img width="1512" alt="Screenshot 2023-09-20 at 11 33 02 AM" src="https://github.com/raisaafadilla/assignment2-pbp/assets/134634814/5a76c0b2-19cd-4c49-af5d-f7384daeab1b">
 
 
-**Assignment 4**
+## Assignment 4
 
 **What is UserCreationForm in Django? Explain its advantages and disadvantages.**
 
@@ -224,7 +224,7 @@ The safety of cookies relies on how the developer handles them. Developers need 
    - In the views.py file located within the main subdirectory of my Django project, I made several important updates. First, I included imports for HttpResponseRedirect, reverse, and datetime       to handle redirection, URL reversing, and date-related functionalities. Within the login_user function, I introduced modifications within the "if user is not None" block to enhance the          login process. Additionally, in the show_main function, I incorporated the statement 'last_login': request.COOKIES['last_login'] to include the 'last_login' cookie data in the response,         thereby enabling it to be displayed on the web page. To improve user logout functionality in the logout_user function, I introduced the line response.delete_cookie('last_login') to              effectively delete the 'last_login' cookie when a user logs out. Finally, to display the 'last login' data to users, I inserted the "Last login session:" code into the main.html file.
 
 
-**Assignment 5**
+## Assignment 5
 
 **Explain the purpose of some CSS element selector and when to use it.**
 
@@ -252,7 +252,7 @@ If we want our website to be very different and customized, Tailwind is the way 
 
 I picked Bootstrap as the CSS framework for my assignment. I made changes to the login page, registration, and product creation using Bootstrap's cards. I also improved things like colors, fonts, padding, and more. On the main page, I customized the list table, added a navigation bar, and made adjustments to colors, fonts, padding, buttons, and other details.
 
-**Assignment 6**
+## Assignment 6
 
 **Explain the difference between asynchronous programming and synchronous programming.**
 
@@ -260,15 +260,26 @@ Asynchronous programming enables many processes to run simultaneously, allowing 
 
 **In the implementation of JavaScript and AJAX, there is an implemented paradigm called the event-driven programming paradigm. Explain what this paradigm means and give one example of its implementation in this assignment.**
 
-In event-driven programming, the program's behavior hinges on events that take place during its execution, as opposed to a predefined sequence of operations. Instead of following a strict linear path, an event-driven program remains receptive to specific events. When these events occur, corresponding event handlers or callbacks are activated to address them.
+In event-driven programming, the program's actions depend on events that occur during its execution, rather than a fixed sequence of steps. Programmers define event handlers to control these events, and the code actively anticipates these particular events to occur. When an event takes place, the linked event handler is invoked, and the code promptly reacts, leading to a modification in the page's visual presentation. An example in this assignment is the implementation of the delete button. 
+
+```
+function deleteProduct(id) {
+        fetch("delete-product-ajax/" + id, {
+            method: "POST"
+        }).then(refreshProducts);
+
+        document.getElementById("form").reset();
+        return false;
+    }
+```
 
 **Explain the implementation of asynchronous programming in AJAX.**
 
-Asynchronous programming in AJAX is a technique that enables online applications to communicate with web servers without slowing down the website or "freezing" it. With the use of this method, web pages can ask a server for data or information and respond to the server's response without the webpage being unusable while it waits for the response. In spite of background server communication, this makes websites feel responsive and fluid.
+Asynchronous programming allows a computer program to handle several jobs concurrently rather than sequentially. For the implementation, when something happens on a webpage, like someone clicking a button or submitting a form, JavaScript can take action. It can either make an XMLHttpRequest object or use the fetch API. This object is like a messenger that asks a web server for something. The web server gets this request, figures out what's needed, and then sends an answer back to the web browser. JavaScript reads this answer and deals with it according to the event that started everything. The actions it takes depend on the code that's been set up beforehand.
 
 **In this semester, the implementation of AJAX is done using the Fetch API rather than the jQuery library. Compare the two technologies and write down your opinion which technology is better to use.**
 
-The Fetch API is a new and modern tool that's already in a web browser. It's like a better and more standard way to ask the internet for things, even for AJAX stuff. Now, jQuery is an old favorite tool people have used for a long time. It's handy because it makes the tough AJAX things easier with its fancy tricks. It can make usual AJAX jobs shorter and simpler to get. I prefer the Fetch API more because it is up-to-date and great for new projects.
+The Fetch API is a new and modern tool that's already in a web browser. It's like a better and more standard way to ask the internet for things, even for AJAX stuff. Now, jQuery is an old favorite tool people have used for a long time but it's still user-friendly for beginners. I prefer the Fetch API more because it is up-to-date and great for new projects.
 
 ​​**Explain how you implemented the checklist above step-by-step (not just following the tutorial).**
 
