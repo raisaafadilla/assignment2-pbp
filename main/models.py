@@ -8,3 +8,4 @@ class Product(models.Model):
     amounts = models.IntegerField()
     description = models.TextField()
     prices = models.IntegerField()
+    is_discount = models.BooleanField()

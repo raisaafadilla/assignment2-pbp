@@ -92,6 +92,10 @@
                         <label for="prices" class="col-form-label">Price:</label>
                         <input type="number" class="form-control" id="prices" name="prices"></input>
                     </div>
+                    <div class="mb-3">
+                        <label for="is_discount" class="col-form-label">Discount:</label>
+                        <input type="checkbox" checked="checked" id="is_discount" name="is_discount"></input>
+                    </div>
                 </form>
             </div>
             <div class="modal-footer">
@@ -138,6 +142,7 @@
             <th>Price</th>
             <th>Date Added</th>
             <th>Actions</th>
+            <th>Discount</th>
         </tr>`
         products.forEach((item) => {
             htmlString += `\n<tr>
@@ -149,6 +154,7 @@
             <td>
                 <button onclick="deleteProduct(${item.pk})" class="btn btn-danger" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color: #F8F3EA;">Delete</button>
             </td>
+            <td>${item.fields.is_discount}</td>
         </tr>` 
         })
         

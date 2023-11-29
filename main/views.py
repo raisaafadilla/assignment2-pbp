@@ -14,9 +14,9 @@ from django.views.decorators.csrf import csrf_exempt
 
 @login_required(login_url='/login')
 def show_main(request):
-    # products = Product.objects.all()
     count = Product.objects.all().count()
     products = Product.objects.filter(user=request.user)
+    last_login = request.COOKIES.get('last_login', 'default_value')
 
     context = {
         'name': request.user.username,
@@ -24,7 +24,7 @@ def show_main(request):
         'class': 'PBP KI', 
         'products': products,
         'item_count': count,
-        'last_login': request.COOKIES['last_login'],
+        'last_login': last_login,
     }
     return render(request, "main.html", context)
 
@@ -100,9 +100,10 @@ def add_product_ajax(request):
         amounts = request.POST.get("amounts")
         description = request.POST.get("description")
         prices = request.POST.get("prices")
+        is_discount = request.POST.get("is_discount")
         user = request.user
 
-        new_product = Product(name=name, amounts=amounts, description=description, prices=prices, user=user)
+        new_product = Product(name=name, amounts=amounts, description=description, prices=prices, user=user, is_discount=is_discount)
         new_product.save()
 
         return HttpResponse(b"CREATED", status=201)
@@ -114,3 +115,22 @@ def delete_product_ajax(request, id):
     product = Product.objects.get(pk=id)
     product.delete()
     return HttpResponse(b"DELETED", status=201)
+
+@csrf_exempt
+def create_product_flutter(request):
+    if request.method == 'POST':
+        
+        data = json.loads(request.body)
+
+        new_product = Product.objects.create(
+            user = request.user,
+            name = data["name"],
+            price = int(data["price"]),
+            description = data["description"]
+        )
+
+        new_product.save()
+
+        return JsonResponse({"status": "success"}, status=200)
+    else:
+        return JsonResponse({"status": "error"}, status=401)
